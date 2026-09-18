@@ -1,0 +1,87 @@
+# Methodology
+
+## 1. Planning
+
+The objective was to develop a small Security Information and Event Management system capable of collecting, processing, storing and visualizing security-related events.
+
+The project was implemented in a controlled virtual laboratory environment.
+
+## 2. Environment Setup
+
+Docker and Docker Compose were used to deploy the ELK components.
+
+The environment consisted of:
+
+- Elasticsearch
+- Logstash
+- Filebeat
+- Kibana
+
+## 3. Log Generation
+
+Simulated security events were prepared in a security log file. These events represented different security conditions and were used as input for the SIEM pipeline.
+
+## 4. Log Collection
+
+Filebeat was configured to collect the log information and forward the events to Logstash.
+
+## 5. Log Processing
+
+Logstash received the incoming events and processed them before forwarding them to Elasticsearch.
+
+## 6. Data Storage
+
+Elasticsearch stored the processed events using the SIEM event index pattern.
+
+Elasticsearch connectivity and index availability were verified using cURL commands.
+
+## 7. Security Analysis
+
+Kibana was used to create the SIEM Events data view.
+
+The events were analyzed using fields such as severity and event type.
+
+## 8. Visualization
+
+A Kibana dashboard was created to provide a visual representation of the collected security events.
+
+The dashboard included:
+
+- Events by Severity
+- Events by Type
+
+The dashboard was configured using a seven-day time range.
+
+## 9. Verification
+
+The number of stored SIEM events was verified using an Elasticsearch count query.
+
+The stored documents were also inspected using an Elasticsearch search query.
+
+## 10. Evidence Collection
+
+Screenshots were captured at important stages of the implementation and included in the final project report.
+
+## 11. Incident Response Simulation
+
+The simulated security events were analyzed through the centralized SIEM environment.
+
+The workflow demonstrated the basic stages of:
+
+- Detection
+- Analysis
+- Identification of event severity and type
+- Review of collected evidence
+- Recommended defensive response
+
+## 12. Mitigation
+
+Recommended defensive actions include:
+
+- Monitoring authentication-related events.
+- Investigating repeated failed login activity.
+- Reviewing suspicious event types.
+- Maintaining centralized logging.
+- Regularly reviewing SIEM dashboards and alerts.
+- Restricting unnecessary network exposure.
+- Keeping security software and services updated.
