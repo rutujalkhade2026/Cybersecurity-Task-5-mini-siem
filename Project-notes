@@ -1,0 +1,62 @@
+# Project Notes
+
+## Environment
+
+Operating System: Kali Linux  
+Platform: Oracle VirtualBox  
+Container Platform: Docker  
+Orchestration: Docker Compose
+
+## ELK Components
+
+Elasticsearch:
+Stores the collected SIEM events.
+
+Logstash:
+Processes and forwards security events to Elasticsearch.
+
+Filebeat:
+Collects log data and sends it to Logstash.
+
+Kibana:
+Provides data exploration and security event visualization.
+
+## Data
+
+The project uses simulated security log events in a controlled laboratory environment.
+
+## Elasticsearch Index
+
+SIEM events are stored using the `siem-events-*` index pattern.
+
+## Kibana
+
+Data View:
+SIEM Events
+
+Dashboard:
+Mini SIEM Security Dashboard
+
+Time Range:
+Last 7 days
+
+## Visualizations
+
+1. Events by Severity
+2. Events by Type
+
+## Verification Commands
+
+docker --version
+
+docker compose version
+
+docker compose ps
+
+curl -v http://localhost:9200
+
+curl -v http://localhost:9200/_cat/indices?v
+
+curl -s http://localhost:9200/siem-events-*/_count
+
+curl -s "http://localhost:9200/siem-events-*/_search?size=12&pretty"
